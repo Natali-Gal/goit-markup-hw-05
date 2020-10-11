@@ -7,6 +7,7 @@
     --footer-address-color: rgba(255, 255, 255, 0.6);
     --accent-color: #2196F3; 
     --portfolio-btn: #F9F8FF;
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -79,6 +80,7 @@ img {
 
 .header-address-link{
     display: flex;
+    transition: color 250ms var(--timing-function);
 }
 
 .header-mail-link svg {
@@ -125,19 +127,40 @@ img {
     line-height: 1.143;
     letter-spacing: 0.02em;
     color: #212121;
-
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: relative; 
+    transition: color 250ms var(--timing-function);
 }
+
+
+
+.link-studija,
+.link-portofolio {
+    color: var(--accent-color);
+}
+
+
+.link-studija::after,
+.link-portofolio::after {
+    display: block;
+    content: " ";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color:var(--accent-color);
+    position: absolute;
+    transition: color 250ms var(--timing-function);
+}
+
+
 .navigation-list-link:hover,
 .navigation-list-link:focus,
 .header-address-link :hover,
 .header-address-link :focus {
     color: var(--accent-color);
-}
-
-.model-btn-nav:hover,
-.model-btn-nav:focus {
-    background-color: var(--accent-color);
-    color: var(--title-dark-thene-color);
 }
 
 .header-mail-link,
@@ -311,11 +334,31 @@ img {
 
 .services-img {
     width: 370px;
+    position: relative;
     
 }
 
 .services-img:not(:last-child) {
     margin-right: 30px;
+}
+
+.services-text {
+    background: rgba(47, 48, 58, 0.8);
+    color: #FFFFFF;
+    font-family: var(--main-fon);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.143;
+    letter-spacing: 0.03em;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }
 
 .about-us-section {
@@ -397,6 +440,7 @@ img {
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+    transition: all 250ms var(--timing-function);
 }
 
 .social-list-item:not(:last-child) {
@@ -405,6 +449,7 @@ img {
 
 .social-list-item:hover {
     background-color: #2196F3 ;
+    cursor: pointer;
     
 }
 
@@ -436,6 +481,7 @@ img {
     justify-content: center ;
     border: 1px solid #afb1b8;
     border-radius: 4px;
+    transition: fill 250ms var(--timing-function);
 }
 
 .clients-list-item:not(:last-child) {
@@ -444,6 +490,7 @@ img {
 
 .clients-list-link svg {
     --color2: #AFB1B8
+    transition: color 250ms var(--timing-function);
 }
 
 .clients-list-link:hover svg {
@@ -501,6 +548,14 @@ img {
     color: var(--title-light-thene-color);
     background: var(--portfolio-btn);
     border-color: var(--portfolio-btn);
+    transition: all  250ms var(--timing-function);
+}
+
+.model-btn-nav:hover,
+.model-btn-nav:focus {
+    background-color: var(--accent-color);
+    color: var(--title-dark-thene-color);
+    cursor: pointer;
 }
 
 .btn-nav-list:not(:last-child) {
@@ -509,8 +564,10 @@ img {
 
 
 .list-progect {
+    position: relative;
     width: 370px;
     border: 1px solid #ECECEC;
+    transition: all 250ms var(--timing-function);
 }
 
 .list-progect:hover {
@@ -531,6 +588,40 @@ img {
     margin-top: 0;
     margin-bottom: 0;
     
+}
+
+.project-text {
+
+    position: absolute;
+    font-family: var(--main-font);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    font-style: normal;
+    letter-spacing: 0.03em;
+    background-color: rgba(33, 150, 243, 0.9);
+    color: #FFFFFF;
+    width: 100%;
+    padding: 63px 24px;
+    top: 0;
+    
+
+    animation-name: projects;
+    animation-duration: 250ml;
+    animation-timing-function: var(--timing-function);
+    animation-direction: reverse;
+
+}
+
+@keyframes projects {
+    0% {
+        transform: opacity:0;
+    } 
+
+    100% {
+        transform: opacity:1;
+
+    }
 }
 
 .subject {
@@ -660,6 +751,7 @@ img {
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.1); 
+    transition: background-color 250ms var(--timing-function);
 }
 
 
