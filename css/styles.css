@@ -489,7 +489,7 @@ img {
 }
 
 .clients-list-link svg {
-    --color2: #AFB1B8
+    --color2: #AFB1B8;
     transition: color 250ms var(--timing-function);
 }
 
