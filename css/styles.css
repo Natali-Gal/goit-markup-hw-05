@@ -527,6 +527,7 @@ img {
 
 .clients-list-link svg {
     --color4: #AFB1B8;
+    transition: all 250ms var(--timing-function);
    
     
 }
